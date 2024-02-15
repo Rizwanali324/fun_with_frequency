@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        p {
+            font-weight: normal !important;
+            font-size: medium !important;
+        }
+        .crop-view {
+            display: flex;
+            justify-content: center;
+        }
+        .img-crop {
+            max-width: 400px;
+            max-height: 300px;
+        }
+        .img-accentuation {
+            height: 350px !important;
+            width: 350px !important;
+            border: solid 8px;
+            border-color: rgb(53, 107, 154);
+        }
+        .img-accentuation:hover{
+            border-color: rgb(174, 37, 58);
+            cursor: pointer;
+        }
+        .img-hybrid {
+            height: 200px !important;
+            width: 200px !important;
+        }
+        .img-pile {
+            height: 200px !important;
+            width: 200px !important;
+        }
+        .img-hybrid-analyse {
+            height: 250px !important;
+            width: 250px !important;
+        }
+        .img-fq-analyse{
+            border: solid 8px;
+            border-color: rgb(53, 107, 154);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T1: Auguste Tiemele</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-sm bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h4 logo logo">Tp2</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#1">Accentuation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#2">Image Hybride</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#3">Pile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#4">Melange Image</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#5">Source Image</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="p-5">
+            <h4 class="logo">
+                TP2: On s'amuse en fréquences 
+            </h4>
+
+
+            <div class="container mt-5">
+                <h4>Comprehensive Report Summary</h4>
+                <!-- Place your comprehensive report summary here -->
+                <p>
+                    <h4>Introduction</h4>
+This report detailed the exploration of advanced image processing techniques, emphasizing manipulation in the frequency domain, hybrid image creation, Gaussian and Laplacian stacks, and multiresolution blending. These methods showcase the application of sophisticated image processing theories to practical outcomes, enhancing understanding and manipulation of visual data.
+
+<h4>Methodology Overview</h4>
+<h4> Part 0:Image Sharpening:</h4>
+ Implemented unsharp masking to enhance image clarity by emphasizing edges of grayscale and colors images.
+
+<h4>Part 1: Hybrid Images:</h4> 
+<p>
+    In this project, I have attempted to create Hybrid Images using Computational Photography. Hybrid Images are those images, the perception of whom depend on the viewing distance. They are a combination of two images, such that one is perceived when viewing the hybrid image from up close and the other is perceived when viewing the image from far away. This is done using the low frequency component of the image that is to be perceived from far and on the other hand using the high frequencies of the image that is to be perceived from up close.
+    
+    </p>
+<h4>Part 2: Gaussian and Laplacian Stacks:</h4>  
+<p>In this part, I delved into the fascinating world of multi-scale image analysis. My goal was to understand the inner workings of an image by dissecting it using Gaussian and Laplacian pyramids/stacks. Imagine these like zooming into a painting and focusing on individual brushstrokes or stepping back to appreciate the overall composition – that's essentially what I did, but at the level of frequencies within the image.
+
+    By constructing pyramids, I built a condensed version of the image, where each level showcased a different range of frequencies. Like a topographical map highlighting mountains and valleys, these pyramids allowed me to analyze both fine textures and broader structural elements. Stacks, on the other hand, offered me a different perspective, exploring the image at various levels of blur while retaining its original size.
+    
+    This multi-dimensional analysis opens up a treasure trove of possibilities. I can now scrutinize the intricate textures of a fabric, dissect the subtle contrasts in a landscape, or identify crucial objects across different scales. This information is invaluable for tasks like enhancing an image by selectively sharpening details or smoothing noise, focusing on specific frequency bands.
+    
+    While this project didn't delve into image blending directly, the potential is tantalizing. These pyramids/stacks can be used as building blocks to seamlessly merge two images in the frequency domain, creating visually stunning results.
+    
+    This exploration into multi-scale analysis has equipped me with a powerful tool for understanding and manipulating images at different levels. I'm eager to see how this knowledge can be applied in diverse fields, from unraveling the secrets hidden within medical scans to crafting breathtaking visual effects. The possibilities are endless, and I'm excited to continue my journey into the multiverse of images!</p>
+<h4>Part 3: Multiresolution Blending:</h4>  
+<p>I explored the task of blending two images using mask(s) to create a new, combined output. I successfully loaded and resized two images to the same size for processing.
+
+    To enable frequency-domain blending, I generated Gaussian and Laplacian pyramids for each image. Then, I combined the Laplacian pyramids element-wise to create a blended pyramid. This blended pyramid allowed me to reconstruct the final blended image.
+    
+    For further customization, I implemented two masking approaches:
+    
+    Simple Mask: I used a left-half mask to selectively reveal portions of each image, creating a distinct blend.
+    Irregular Mask: I utilized a more complex mask with white, black, and gray areas to define specific blending regions, offering more creative control.
+    I displayed and saved the processed images and final blends for evaluation. This allowed me to analyze the results and assess the effectiveness of the approaches.
+    This project demonstrated the effectiveness of image blending with masks and its potential for various applications. By further exploring techniques and customization, this approach can be even more valuable in real-world scenarios.</p>
+
+<h4>Analysis/Design</h4>
+The implemented techniques, from basic enhancements to complex blending, demonstrate the power of computational methods in image manipulation. The projects provided insights into frequency domain analysis and offered a comprehensive toolkit for advanced image processing tasks.
+
+<h4>Advantages of the Code Implementation</h4>
+
+<p>1:Modularity and Reusability</p>
+<p>2:Interactive Parameters Adjustment.Allows for interactive exploration and fine-tuning.</p>
+
+
+<h4>Limitations and Challenges</h4> 
+<p>1:May lead to performance issues with high-resolution images.</p>
+<p>2:Manual Parameter Selection on manual experimentation for optimal values.</p>
+<p>3:Limited Error Handling,affect robustness when applied to a wide range of images.</p>
+
+
+<h4>Future Work</h4>
+
+<p>1:Automating parameter optimization could enhance efficiency.</p>
+<p>2:Applying efficient algorithms or parallel processing to improve performance.</p>
+<p>3:A GUI could make the tools accessible to non-programmers.</p>
+<P>4:Adapting techniques for video content could open new application avenues.</P>
+<p>5:Enhancing code to gracefully handle a variety of input conditions.</p>
+
+<h4>Conclusion</h4>
+<P>This exploration of image processing techniques highlights the interplay between theory and practical application in visual data manipulation. The project underscores the importance of frequency domain analysis and provides a robust foundation for future advancements in image processing. Addressing the outlined limitations and pursuing suggested future work will further evolve these capabilities, enabling broader applications and making sophisticated image processing techniques more accessible and efficient.
+
+By integrating advancements in automation, performance optimization, and user interface development, future iterations of this project can offer even more powerful tools for creative and technical image manipulation, extending beyond static images to dynamic video content.
+</p>
+
+
+            <div class="container">
+                <div class="p-3">
+                    <h3 id="1" class="p-3">1 - Accentuation </h3>
+                    <div class="container">                       
+                        <div class="p-2">
+                            <p>In this task, I created a Python script that enables me to interactively sharpen and
+                                 resize images using a graphical user interface (GUI) with OpenCV. 
+                                 I implemented functionality that allows me to adjust the intensity of the sharpening and the scale via trackbars,
+                                  giving me the ability to observe changes to the images in real-time. 
+                                  The script offers the option to compare the original and processed images side by side. Additionally,
+                                   I can save the processed images with their sharpening effects applied to a designated directory. 
+                                   This project is a practical demonstration of combining image processing techniques with interactive GUI elements, 
+                                enhancing my ability to manipulate and analyze image properties dynamically.</p>
+                            <h4>Resultats <h4/> 
+                            <div id="accentuation" class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col" style="padding-right: 0 !important;">
+                                        <h6 class="text-center" >Orignal</h6>
+                                        <a href="images\Albert_Einstein.png">
+                                            <img class="img-accentuation img-fluid" src="images\Albert_Einstein.png" />
+                                        </a>
+                                    </div>
+                                    <div class="col" style="padding-left: 0 !important;">
+                                        <h6 class="text-center" >Orignal</h6>
+                                        <a href="images\Marilyn_Monroe.png">
+                                           <img class="img-accentuation img-fluid" src="images\Marilyn_Monroe.png" /> 
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mt-3">
+                                    <div class="col" style="padding-right: 0 !important;">
+                                        <h6 class="text-center" >Sharpening</h6>
+                                        <a href="results\accentuation\Albert_Einstein_sharpened.png">
+                                            <img class="img-accentuation img-fluid" src="results\accentuation\Albert_Einstein_sharpened.png" />
+                                        </a>
+                                    </div>
+                                    <div class="col" style="padding-left: 0 !important;">
+                                        <h6 class="text-center" >Sharpening</h6>
+                                        <a href="results\accentuation\Marilyn_Monroe_sharpened.png">
+                                            <img class="img-accentuation img-fluid" src="results\accentuation\Marilyn_Monroe_sharpened.png" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <h3 id="2" class="p-3">2 - Image Hybride </h3>
+                    <div class="container">                     
+                        <div class="p-2">
+                            <p>To extract the low frequency portion of an image, I filtered the image with a gaussian filter (this is the same as multiplying the gaussian filter in the frequency space - so we basically keep the low frequencies). To accurately calculate the frequency we have  that shows how the cut-off frequency is related to the sigma of a gaussian filter. However, we can simply experiment of the sigma's of the gaussian since it is directly related to it. To extract the high frequency portion of an image, I simply subtracted the low frequency portion away from the original image. This was all that was required to create hybrid images</p>
+                            <h4>Resultats <h4/> 
+                            <div id="resultat-multi" class="container-fluid">
+                                <div class="row" >
+                                    <div class="col">
+                                        <h6 class="text-center">Einstein Marilyne</h6>
+                                        <a href="results\hybrid\Einstein-Marilyn\Hybrid_Image.png">
+                                            <img class="img-fluid img-accentuation img-hybrid" src="results\hybrid\Einstein-Marilyn\Hybrid_Image.png"/>
+                                        </a>
+
+                                    <div class="col">
+                                        <h6 class="text-center">Chat Chien</h6>
+                                        <a href="results\hybrid\cat\Hybrid_Image.png">
+                                            <img class="img-fluid img-accentuation img-hybrid" src="results\hybrid\cat\Hybrid_Image.png" />
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="text-center">Water and Alcohal</h6>
+                                        <a href="results\hybrid\custom\Hybrid_Image.png">
+                                            <img class="img-fluid img-accentuation img-hybrid" src="results\hybrid\custom\Hybrid_Image.png" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col">
+                                        <h5>Analayse Frequenciel Resultats preferer Chien Chat</h5>
+                                        <table class="img-fq-analyse">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="images\cat.jpg">
+                                                            <img class="img-fluid img-hybrid-analyse" src="images\cat.jpg" />
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="images\chien.jpg">
+                                                            <img class="img-fluid img-hybrid-analyse" src="images\chien.jpg" />
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="results/hybrid/cat/Highpass_Image_2_Frequency.png">
+                                                            <img class="img-fluid img-hybrid-analyse" src="results/hybrid/cat/Highpass_Image_2_Frequency.png" />
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="results\hybrid\cat\Hybrid_Image_Frequency.png">
+                                                            <img class="img-fluid img-hybrid-analyse" src="results\hybrid\cat\Hybrid_Image_Frequency.png" />
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="results\hybrid\cat\Image_1_Frequency.png">
+                                                            <img class="img-fluid img-hybrid-analyse" src="results\hybrid\cat\Image_1_Frequency.png" />
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href="results\hybrid\cat\Image_2_Frequency.png">
+                                                            <img class="img-fluid img-hybrid-analyse" src="results\hybrid\cat\Image_2_Frequency.png" />
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="results\hybrid\cat\Lowpass_Image_1_Frequency.png">
+                                                            <img class="img-fluid img-hybrid-analyse" src="results\hybrid\cat\Lowpass_Image_1_Frequency.png" />
+                                                        </a>
+                                                    </td>
+                                                    
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="p-3">
+                    <h3 id="3" class="p-3">3 - Pile </h3>
+                    <div class="container">
+                        <div class="p-2">
+                            <p>In this task, I  construct and save Gaussian and Laplacian pyramids, alongside Gaussian and Laplacian stacks, for a given image, leveraging the OpenCV library. My efforts aimed at exploring multi-scale image analysis techniques:
+
+                                <h5>1. **Gaussian Pyramid**:</h5> I created a series of images, each of progressively lower resolution than the original, achieved through Gaussian blurring and subsequent downsampling.
+                                
+                                <h5>2. **Laplacian Pyramid**:</h5>  Building upon the Gaussian Pyramid, I enhanced the image details and edges by subtracting an upsampled lower-resolution image from its higher-resolution counterpart.
+                                
+                                <h5>3. **Gaussian Stack**:</h5> I maintained the original image size across all levels but increased the blurring effect, differing from the Gaussian Pyramid by avoiding downsampling.
+                                
+                                <h5>4. **Laplacian Stack**: </h5> to the Laplacian Pyramid but constructed using the Gaussian Stack to highlight the detail differences between successive blur levels, all the while keeping the original image size constant.
+                                
+                                <h5>Additional work</h5> 
+                                I undertook an extra task focusing on the pyramid construction, further delving into the multi-scale analysis and enhancing my understanding of image content across various scales and detail levels. I meticulously organized the output by saving the generated images in a structured directory for easy access and further analysis. 
+                                This task was particularly insightful for applications in image processing, computer vision, and exploring images in a multi-scale context.</p>
+                            <h4>Results <h4/>
+                            <p>Important les  resultat on ete obtenu grace a des pyramide et non des piles cliqué sur le boutton voir piramide pour la voir. </p>
+                            <div class="row">
+                                <div class="col">
+                                    <table>
+                                        <thead>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div>
+                                                        <a href="linlcoln.html" class="btn btn-danger" role="button">Voir la pyramide</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </thead>
+                                        <h6>Lincoln Gaussian </h6>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Gaussian_Level_0.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Gaussian_Level_0.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Gaussian_Level_1.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Gaussian_Level_1.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Gaussian_Level_2.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Gaussian_Level_2.png" />  
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Gaussian_Level_3.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Gaussian_Level_3.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Gaussian_Level_4.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Gaussian_Level_4.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Gaussian_Level_5.png">
+                                                        <img class="img-fluid img-pile" src="results\pile\stack\licoln\Gaussian_Level_5.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Gaussian_Level_6.png">
+                                                        <img class="img-fluid img-pile" src="results\pile\stack\licoln\Gaussian_Level_6.png" />  
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <table>
+                                        <h6>Lincoln Laplacian</h6>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Laplacian_Level_0.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Laplacian_Level_0.png" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Laplacian_Level_1.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Laplacian_Level_1.png" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Laplacian_Level_2.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Laplacian_Level_2.png" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Laplacian_Level_3.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Laplacian_Level_3.png" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Laplacian_Level_4.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Laplacian_Level_4.png" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Laplacian_Level_5.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Laplacian_Level_5.png" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack\licoln\Laplacian_Level_6.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\stack\licoln\Laplacian_Level_6.png" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>  
+                            <div class="row  mt-4" style="width: 40%; height: 5px; background-color: rgb(53, 107, 154);" ></div>
+                            <div class="row pt-1">
+                                <div class="col">
+                                    <table>
+                                        <thead>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div>
+                                                        <a href="water.html" class="btn btn-danger" role="button">Voir la pyramide</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </thead>
+                                        <h6>custom Gaussian </h6>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Gaussian_Level_0.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Gaussian_Level_0.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Gaussian_Level_1.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Gaussian_Level_1.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Gaussian_Level_2.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Gaussian_Level_2.png" />  
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Gaussian_Level_3.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Gaussian_Level_3.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Gaussian_Level_4.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Gaussian_Level_4.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Gaussian_Level_5.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Gaussian_Level_5.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Gaussian_Level_6.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Gaussian_Level_6.png" />  
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            </div>
+                            
+                            <div class="row  mt-4" style="width: 40%; height: 5px; background-color: rgb(53, 107, 154);" ></div>
+                            <div class="row pt-1">
+                                <div class="col">
+                                    <table>
+                                        <thead>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div>
+                                                        <a href="water.html" class="btn btn-danger" role="button">Voir la pyramide</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </thead>
+                                        <h6>custom Laplacian </h6>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Laplacian_Level_0.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Laplacian_Level_0.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Laplacian_Level_1.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Laplacian_Level_1.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Laplacian_Level_2.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Laplacian_Level_2.png" />  
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Laplacian_Level_3.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Laplacian_Level_3.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Laplacian_Level_4.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Laplacian_Level_4.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Laplacian_Level_5.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Laplacian_Level_5.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\stack1\custom\Laplacian_Level_6.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\stack1\custom\Laplacian_Level_6.png" />  
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row  mt-4" style="width: 40%; height: 5px; background-color: rgb(53, 107, 154);" > </div>
+                            <div class="row pt-1">
+                                <div class="col">
+                                    <table>
+                                        <thead>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div>
+                                                        <a href="enmly.html" class="btn btn-danger" role="button">Voir la pyramide</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </thead>
+                                        <h6>custom Gaussian pyramide </h6>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_0.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_0.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_1.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_1.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_2.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_2.png" />  
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_3.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_3.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_4.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_4.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_5.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_5.png" />  
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                               
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_6.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_6.png" />  
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_7.png">
+                                                      <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Gaussian_Pyramid_Level_7.png" />  
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+                                
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <table>
+                                        <h6>Custom Laplacian</h6>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_0.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_0.png" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_1.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_1.png" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_2.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_2.png" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_3.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_3.png" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_4.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_4.png" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_5.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_5.png" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_6.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_6.png" />
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_7.png">
+                                                        <img class=" img-fluid img-pile" src="results\pile\paramid1\hybrid\Laplacian_Pyramid_Level_7.png" />
+                                                    </a>
+                                                </td>
+                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>                   
+                        <div class="p-2">
+                            <h4>Discussion  <h4/>
+                            <p class="mt-3">
+                                Les resultats sont faites avec une pyramide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <h3 id="4" class="p-3">4 - Melange Image </h3>
+                    <div class="container">                   
+                        <div class="p-2">
+                            <p>My main task was to blend images of an apple and an orange to create a unique "orple" blended image, utilizing advanced image processing techniques with Python and OpenCV. This endeavor was part of a broader exploration into custom blending, masking, and enhancing images. Here's an overview of my work, including the primary goal and the additional techniques I employed:
+
+                                <h4>1. **Creating the "Orple" Blended Image**:</h4> The centerpiece of my project was ingeniously blending the apple and orange images to produce a new, "orple" image. My goal was to merge the distinct characteristics of both fruits into one composite image that smoothly transitions between the features of an apple and an orange.
+                                
+                                <h4>2. **Custom Blending Techniques**:</h4> Beyond simply creating the "orple" image, I delved into custom blending methods. This involved using both simple geometric masks for straightforward blending and irregular masks for more artistic and nuanced effects. The irregular mask, in particular, allowed me to creatively control the blend, achieving a seamless integration of the two fruits' unique aspects according to the mask's contours.
+                                
+                                <h4>3. **Mask Application**: </h4>  I detailed the process of applying simple geometric masks, which divided the images for a basic blend, and irregular masks, which facilitated the custom blending effects. The geometric approach was direct and simple, whereas the irregular mask offered a sophisticated technique to manipulate the blend area for intricate shapes and transitions.
+                                
+                                <h4>4. **Enhancement and Visualization**: </h4> I focused on enhancing the "orple" image to highlight its details and adjust its visibility. I utilized Laplacian filters to emphasize edges and textures and applied normalization and histogram equalization to improve the visualization, ensuring that the blended image's details were vivid and clear.
+                                
+                                
+
+
+                            </p>
+                            <h4>Resultats <h4/> 
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col" style="padding-right: 0 !important;">
+                                        <h6>Pommorange</h6>
+                                        <a href="results\melange\orple\blended_image_orple.jpg">
+                                            <img class="img-accentuation img-fluid" src="results\melange\orple\blended_image_orple.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="col" style="padding-left: 0 !important;">
+                                        <h6>Blinded with blended_with_irregular_mask</h6>
+                                        <a href="results\melange\mask\blended_with_irregular_mask.jpg">
+                                            <img class="img-accentuation img-fluid" src="results\melange\mask\blended_with_irregular_mask.jpg" /> 
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col" style="padding-right: 0 !important;">
+                                        <h6>Mix Vang2</h6>
+                                        <a href="images\vang2.jpg">
+                                            <img class="img-accentuation img-fluid" src="images\vang2.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="col" style="padding-left: 0 !important;">
+                                        <h6>L'alcool c'est de l'eau</h6>
+                                        <a href="results\melange\custom_blinded\blended_image_orple.jpg">
+                                            <img class="img-accentuation img-fluid" src="results\melange\custom_blinded\blended_image_orple.jpg" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col" style="padding-right: 0 !important;">
+                                        <h6>Mix Vang1</h6>
+                                        <a href=images\vang1.jpg">
+                                            <img class="img-accentuation img-fluid" src="images\vang1.jpg" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container mt-2">
+                                <div class="row">
+                                    <h6>Analayse des sequence de melange Pommorange</h6>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\melange\orple\stack_masked_image1_Laplacian_K1.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\stack_masked_image1_Laplacian_K1.jpg"/> 
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\melange\orple\stack_masked_image1_Laplacian_K3.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\stack_masked_image1_Laplacian_K3.jpg"/> 
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\melange\orple\stack_masked_image1_Laplacian_K5.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\stack_masked_image1_Laplacian_K5.jpg"/> 
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\melange\orple\stack_masked_image1_Laplacian_K7.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\stack_masked_image1_Laplacian_K7.jpg"/> 
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\melange\orple\stack_masked_image1_Laplacian_K9.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\stack_masked_image1_Laplacian_K9.jpg"/> 
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\melange\orple\stack_masked_image1_Laplacian_K11.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\stack_masked_image1_Laplacian_K11.jpg"/> 
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\melange\orple\stack_masked_image2_Laplacian_K1.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\stack_masked_image2_Laplacian_K1.jpg"/> 
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\melange\orple\stack_masked_image2_Laplacian_K3.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\stack_masked_image2_Laplacian_K3.jpg"/> 
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\melange\orple\stack_masked_image2_Laplacian_K5.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\stack_masked_image2_Laplacian_K5.jpg"/> 
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="results\melange\orple\Masked Image1.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\Masked Image1.jpg"/> 
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\melange\orple\Masked Image2.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\Masked Image2.jpg"/> 
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="results\melange\orple\blended_image_orple.jpg">
+                                                       <img class="img-fluid img-pile" src="results\melange\orple\blended_image_orple.jpg"/> 
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                            <h4>Discussion  <h4/>
+                            <p class="mt-3">
+                                In summary, my project showcased a detailed approach to creative image blending, with the "orple" image serving as a testament to the innovative combination of image processing techniques. I demonstrated how selective masking, edge enhancement, and effective visualization and saving methods could be leveraged to produce visually compelling results, making this project a valuable exploration in the realm of artistic image creation, photo editing, and computer vision applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <h3 id="5" class="p-3"> Source Image</> </h3>
+                    <div class="container">                   
+                        <div class="p-2">
+                            <h4>Discussion  <h4/>
+                            <p>
+                                <strong>james_bond_first</strong>: <a href="https://www.esquire.com/entertainment/movies/g26633373/james-bond-actors-ranked/">https://www.esquire.com/entertainment/movies/g26633373/james-bond-actors-ranked/</a> </br>
+                                <strong>james_bond_last</strong>: <a href="https://www.pinterest.co.uk/pin/376191375122749098/">https://www.pinterest.co.uk/pin/376191375122749098/</a></br>
+                                </br>
+                                <strong>chat</strong>: <a href="https://pixnio.com/fr/faune-animaux/chats-et-chatons/chat-mignonne-portrait-animaux-animal-tete-kitty-chaton-felin">https://pixnio.com/fr/faune-animaux/chats-et-chatons/chat-mignonne-portrait-animaux-animal-tete-kitty-chaton-felin</a></br>
+                                <strong>chien</strong>: <a href="https://www.ipnoze.com/petit-chiot-cavalier-nessa/">https://www.ipnoze.com/petit-chiot-cavalier-nessa/</a></br>
+                                </br>
+                                <strong>vang1</strong>: <a href="https://fr.wikipedia.org/wiki/Vincent_van_Gogh">https://fr.wikipedia.org/wiki/Vincent_van_Gogh</a></br>
+                                <strong>vang2</strong>: <a href="https://blog.artsper.com/fr/la-minute-arty/analyse-dun-chef-doeuvre-la-nuit-etoilee-de-van-gogh/">https://blog.artsper.com/fr/la-minute-arty/analyse-dun-chef-doeuvre-la-nuit-etoilee-de-van-gogh/</a></br>
+                                </br>
+                                <strong>style</strong>: <a href="https://lareviewofbooks.org/article/david-lynch-on-his-favorite-photographs/">https://lareviewofbooks.org/article/david-lynch-on-his-favorite-photographs/</a></br>
+                                </br>
+                                <strong>morgan</strong>: <a href="https://nationaltoday.com/birthday/morgan-freeman/">https://nationaltoday.com/birthday/morgan-freeman/</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script async>
+
+</script>
+</html>
