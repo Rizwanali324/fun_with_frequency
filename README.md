@@ -1,5 +1,5 @@
 ### Fun with frequencies
-![Alt text](web/images/hybrid.jpg)
+![Alt text]https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FHybrid_image&psig=AOvVaw0L-iPWAl5lcefHc3x-hxmf&ust=1708079415772000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCOjpiO6RrYQDFQAAAAAdAAAAABAJ
 ## Table of Content
   * [Description](#Description)
   * [Motivation](#Motivation)
