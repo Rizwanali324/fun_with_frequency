@@ -1,14 +1,14 @@
 ### Fun with frequencies
-![](web/images/hybrid.jpg)
+![Alt text](web/images/hybrid.jpg)
 ## Table of Content
   * [Description](#Description)
   * [Motivation](#Motivation)
   * [Features](#Features)
-  * [Getting Started](#Getting Started)
+  * [Getting Started](#Getting-Started)
   * [Installation](#installation)
-  * [Directory Tree](#Directory Tree)
+  * [Directory Tree](#Directory-Tree)
   * [Contributing](#Contributing) 
-  * [Acknowledgments Contributing](#Acknowledgments Contributing)
+  * [Acknowledgments Contributing](#Acknowledgments-Contributing)
   * [License](#license)
   
 ## Description
@@ -47,13 +47,18 @@ To get started with this code repository, follow these steps:
 
 The Code is written in Python 3.12.1 If you don't have Python installed you can find it [here](https://www.python.org/downloads/). If you are using a lower version of Python you can upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries, run this command in the project directory after [cloning](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/) the repository:
 1. Clone the repository:
+```bash
 git clone https://github.com/Rizwanali324/fun_with_frequency.git
-
+```
 2. Navigate to the project directory:
- ```bash cd fun_with_frequency ```
+ ```bash 
+ cd fun_with_frequency
+  ```
 
 3. Install rrequirementse:
- ```bash pip install -r requirements.txt ```
+ ```bash
+  pip install -r requirements.txt
+   ```
 
  ## Directory Tree 
 ```
