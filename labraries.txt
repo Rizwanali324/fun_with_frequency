@@ -1,0 +1,8 @@
+
+numpy 
+scipy
+PIL 
+os
+skimage 
+matplotlib
+python
