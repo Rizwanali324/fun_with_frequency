@@ -1,0 +1,42 @@
+TP2: On s'amuse en fréquences
+
+Partie 0: Réchauffement
+Note (3/5)
+---------------------------------
+Résultats (3/5):  The sharpening is to aggressive.
+
+Partie 1: Images hybrides
+Note (17/25)
+---------------------------------
+Einstein-Marilyn et images (7/10): The original images aren't shown.
+Analyse fréquentielle (10/15): No discussion of analysis
+
+
+Partie 2: Piles gaussienne et laplacienne
+Note (14/25)
+---------------------------------
+Lincoln et Gala (7/10): The laplacian is all dark.
+Image hybride préférée (7/15): Laplacian cannot be seen as displayed. No discussion.
+
+
+Partie 3: Mélange multirésolution
+Note (26/30)
+---------------------------------
+Pommange (5/5):
+Masques irréguliers (10/10):
+Vos propres photos (3/5): Result not very interesting
+Illustration détaillée (8/10): The figure is not explained
+
+Autre
+---------------------------------
+Générez une image hybride en couleur (?/6): 
+Essayez de créer différents types d'images hybrides (?/6): 
+Créez des images hybrides à partir de vos propres photos (?/6):
+Implémentez une pyramide plutôt qu'une pile (5/5):
+Implantez le transfert de style pour les portraits de visage (?/20):
+
+NOTE FINALE: 65
+
+----------
+Jour de retard : 0
+Jours de retard restants : 0
